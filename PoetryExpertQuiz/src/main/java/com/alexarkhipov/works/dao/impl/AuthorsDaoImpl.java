@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +16,9 @@ public class AuthorsDaoImpl implements AuthorsDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
+	@SuppressWarnings("unchecked")
 	public List<Authors> getAuthors() {
 		Criteria criteria = sessionFactory.openSession().createCriteria(Authors.class);
-		criteria.add(Restrictions.isNull("byear"));
 		return criteria.list();
 	}
 

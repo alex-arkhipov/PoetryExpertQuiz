@@ -2,13 +2,13 @@ DROP TABLE IF EXISTS authors;
 CREATE TABLE Authors (id int primary key auto_increment, FullName varchar(100) not null, FName varchar(100) not null, MName varchar(100) not null, LName varchar(100) not null, BYear int, DYear int, Sex tinyint not null);
 
 DROP TABLE IF EXISTS types;
-CREATE TABLE Types (id int primary key auto_increment, Type varchar(100));
+CREATE TABLE Types (id int primary key, Type varchar(100));
 
 DROP TABLE IF EXISTS genres;
-CREATE TABLE Genres (id int primary key auto_increment, Genre varchar(100));
+CREATE TABLE Genres (id int primary key, Genre varchar(100));
 
 DROP TABLE IF EXISTS works;
-CREATE TABLE Works (id int primary key auto_increment, AuthorID int not null, TypeID int not null, Title varchar(255) not null, CreationYear int, GenreID int);
+CREATE TABLE Works (id int primary key auto_increment, AuthorID int not null, TypeID int not null, Title varchar(255) not null, CYear int, GenreID int);
 ALTER TABLE Works ADD FOREIGN KEY (AuthorID) REFERENCES Authors(id);
 ALTER TABLE Works ADD FOREIGN KEY (TypeID) REFERENCES Types(id);
 ALTER TABLE Works ADD FOREIGN KEY (GenreID) REFERENCES Genres(id);
