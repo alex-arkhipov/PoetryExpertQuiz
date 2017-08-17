@@ -1,45 +1,51 @@
 package com.alexarkhipov.works.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "AUTHORS")
-public class Authors {
+@Table(name = "PLAYERS")
+public class Players {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
 
+	@Column(nullable = false, length = 20)
+	private String nickname;
+
 	@Column(nullable = false, length = 255)
-	private String fullname;
+	private String name;
 
 	public String getFullname() {
-		return fullname;
+		return name;
 	}
 
 	@Column(nullable = false, length = 100)
-	private String fname;
-	@Column(nullable = false, length = 100)
-	private String mname;
-	@Column(nullable = false, length = 100)
-	private String lname;
+	private String hash;
 
 	@Column
-	private Integer byear;
+	private Integer age;
+
+	@Column(nullable = false, length = 100)
+	private String email;
+
 	@Column
-	private Integer dyear;
+	private Integer scores;
+
+	@Column
+	@Temporal(TemporalType.DATE)
+	private Date dyear;
 
 	@Column(nullable = false)
 	private short sex;
 
-	@Override
-	public String toString() {
-		return fullname;
-	}
 }
