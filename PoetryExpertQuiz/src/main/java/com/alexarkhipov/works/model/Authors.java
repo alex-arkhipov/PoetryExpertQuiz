@@ -32,11 +32,24 @@ public class Authors {
 
 	@Column
 	private Integer byear;
+
+	public Integer byear() {
+		return byear;
+	}
+
 	@Column
 	private Integer dyear;
 
+	public Integer dyear() {
+		return dyear;
+	}
+
 	@Column(nullable = false)
 	private short sex;
+
+	public short getSex() {
+		return sex;
+	}
 
 	@Override
 	public String toString() {

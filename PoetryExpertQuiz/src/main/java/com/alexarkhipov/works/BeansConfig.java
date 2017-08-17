@@ -15,9 +15,10 @@ public class BeansConfig {
 
 	@Bean
 	public SessionFactory getSessionFactory() {
-		if (entityManagerFactory.unwrap(SessionFactory.class) == null) {
+		SessionFactory sf = entityManagerFactory.unwrap(SessionFactory.class);
+		if (sf == null) {
 			throw new NullPointerException("factory is not a hibernate factory");
 		}
-		return entityManagerFactory.unwrap(SessionFactory.class);
+		return sf;
 	}
 }
