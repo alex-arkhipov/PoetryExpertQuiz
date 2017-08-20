@@ -1,4 +1,4 @@
-package com.alexarkhipov.works.controller;
+package com.alexarkhipov.poetryexpertquiz.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.alexarkhipov.works.model.Authors;
-import com.alexarkhipov.works.service.AuthorsService;
+import com.alexarkhipov.poetryexpertquiz.model.Authors;
+import com.alexarkhipov.poetryexpertquiz.service.AuthorsService;
 
 @Controller
 public class AuthorsController {

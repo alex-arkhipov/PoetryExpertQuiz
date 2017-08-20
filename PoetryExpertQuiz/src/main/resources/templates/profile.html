@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title th:text="'User profile: ' + ${p.getName()}">User profile: Name</title>
+</head>
+<body>
+<h1>Hello, <span th:text="${p.getName()}">Name</span></h1>
+<p> Your age is <span th:text="${p.getAge()}">Age</span></p>
+<p> Your Nickname is <span th:text="${p.getNickname()}">Nickname</span></p>
+<p> Your email is <span th:text="${p.getEmail()}">Email</span></p>
+<p> Your hash is <span th:text="${p.getHash()}">Hash</span></p>
+</body>
+</html>

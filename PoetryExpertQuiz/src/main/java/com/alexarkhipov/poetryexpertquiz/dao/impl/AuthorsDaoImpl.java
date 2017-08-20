@@ -1,4 +1,4 @@
-package com.alexarkhipov.works.dao.impl;
+package com.alexarkhipov.poetryexpertquiz.dao.impl;
 
 import java.util.List;
 
@@ -7,18 +7,18 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.alexarkhipov.works.dao.PlayersDao;
-import com.alexarkhipov.works.model.Players;
+import com.alexarkhipov.poetryexpertquiz.dao.AuthorsDao;
+import com.alexarkhipov.poetryexpertquiz.model.Authors;
 
 @Component
-public class PlayersDaoImpl implements PlayersDao {
+public class AuthorsDaoImpl implements AuthorsDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	@SuppressWarnings("unchecked")
-	public List<Players> getPlayers() {
-		Criteria criteria = sessionFactory.openSession().createCriteria(Players.class);
+	public List<Authors> getAuthors() {
+		Criteria criteria = sessionFactory.openSession().createCriteria(Authors.class);
 		return criteria.list();
 	}
 

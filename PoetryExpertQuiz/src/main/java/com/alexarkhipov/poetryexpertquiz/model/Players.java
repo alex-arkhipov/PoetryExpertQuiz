@@ -1,4 +1,4 @@
-package com.alexarkhipov.works.model;
+package com.alexarkhipov.poetryexpertquiz.model;
 
 import java.util.Date;
 
@@ -26,6 +26,10 @@ public class Players {
 		return nickname;
 	}
 
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
 	@Column(nullable = false, length = 255)
 	private String name;
 
@@ -33,14 +37,30 @@ public class Players {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Column(nullable = false, length = 100)
 	private String hash;
+
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
+	}
 
 	@Column
 	private Integer age;
 
 	public Integer getAge() {
 		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 	@Column(nullable = false, length = 100)
@@ -50,15 +70,19 @@ public class Players {
 		return email;
 	}
 
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Column
 	private Integer scores;
 
 	@Column
 	@Temporal(TemporalType.DATE)
-	private Date dyear;
+	private Date lastaccess;
 
-	public Date getDyear() {
-		return dyear;
+	public Date getLastAccess() {
+		return lastaccess;
 	}
 
 	@Column(nullable = false)
@@ -66,5 +90,9 @@ public class Players {
 
 	public short getSex() {
 		return sex;
+	}
+
+	public void getSex(short sex) {
+		this.sex = sex;
 	}
 }

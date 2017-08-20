@@ -18,7 +18,7 @@ ALTER TABLE Works ADD FOREIGN KEY (GenreID) REFERENCES Genres(id);
 ALTER TABLE Works ADD FOREIGN KEY (TextID) REFERENCES Texts(id);
 
 DROP TABLE IF EXISTS players;
-CREATE TABLE Players (id int primary key auto_increment, Nickname varchar(20) not null, Name varchar(255) not null, Sex tinyint not null, Hash varchar(100) not null, Age int, LastAccess date, Scores int, Email varchar(100) not null);
+CREATE TABLE Players (id int primary key auto_increment, Nickname varchar(20) not null, Name varchar(255) not null, Sex tinyint not null, Hash varchar(255) not null, Age int, LastAccess date, Scores int, Email varchar(100) not null);
 
 DROP TABLE IF EXISTS stattypes;
 CREATE TABLE stattypes (id int primary key, StatType varchar (50) not null);

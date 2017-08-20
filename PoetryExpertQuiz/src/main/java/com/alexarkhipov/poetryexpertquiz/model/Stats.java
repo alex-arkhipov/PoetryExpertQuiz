@@ -1,4 +1,4 @@
-package com.alexarkhipov.works.model;
+package com.alexarkhipov.poetryexpertquiz.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
