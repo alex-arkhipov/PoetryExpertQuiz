@@ -62,7 +62,19 @@ public class Players {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	
+	public void setAge(String age) {
+		if(age.length() == 0) {
+			return;
+		}
+		try {
+			this.age = Integer.parseInt(age);	
+		}
+		catch(NumberFormatException e) {
+			// Do nothings
+		}
+		
+	}
 	@Column(nullable = false, length = 100)
 	private String email;
 
